@@ -6,22 +6,22 @@
   },
   "contentful":
   {
-    "apiKey": "54c7cf81d6c2686d5b4f092d6678fa545e05f7a4956af4582ef84261b3d7a7d1",
+    "apiKey": "3b61da24e602c4639da062cd2dc142ab6c0ed0e213a52667fed4b9ed5fa4c239",
     "spaces":
     {
       "default":
       {
-        "id": "jbusn4pmd7kt",
+        "id": "yh2hio4tv3u9",
         "contentTypes":
         {
-          "author": "Author",
-          "category": "Category",
-          "posts":
+          "portfolio": "NU Portfolio",
+          "articles": "NU Portfolio Article",
+          "containers":
           {
-            "name": "Post",
-            "template": "templates/_post.slim",
-            "urlAliasPrefix": "contentful",
-            "urlAliasSource": "slug"
+            "name": "NU Container",
+            "template": "templates/_container.slim",
+            "urlAliasSource": "slug",
+            "renderOnBuild": true
           }
         }
       }

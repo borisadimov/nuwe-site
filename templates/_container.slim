@@ -1,0 +1,101 @@
+= include "_var"
+= include "_head"
+
+body
+  .header
+    .menu
+      img.logo src=@nuwe_logo
+
+      a(href="#") Integration
+      a(href="#") Development
+      a(href="#") Technology
+      a(href="#")
+        img.message_icon src=@message_icon
+
+  .hero(style="background-image: url('#{container.bannerComponent.to_h[:bannerImage]}')")
+    .text
+      .slogan =container.bannerComponent.to_h[:mainTitle]
+
+
+  .message
+    .container
+      .avatar
+        img src=container.aboutComponent.to_h[:authorImage]
+
+      .title
+        =container.aboutComponent.to_h[:title]
+
+      .text
+        =container.aboutComponent.to_h[:body]
+
+      .links
+        / - container.aboutComponent.to_h[:link].each do |link|
+        /   a(href=link.href) =link.text
+
+
+
+  .portfolio
+    .container
+        / - array = container.portfolioComponent.to_h[:portfolioArticle]
+        / = array.length
+        / = item.inspect
+          .portfolio_item(data-index="#{index}")
+            .illustration
+              img src=@portfolio_illustration
+            .label
+              | Machine Learning
+          .details(data-index="#{index}")
+            .close
+            .arrow
+              img src=@details_arrow
+            .author
+              .avatar
+                img src=path('sergio_avatar.png')
+              .info
+                .name
+                  | Sergio Mottola,
+                .author_title
+                  | Title of person on project
+
+            .title Nuwe works with Blusense as a service design and development partner.
+
+            .text = @details_text
+
+            .links
+              a(href="#") Contact us
+
+
+  .team
+    .container
+      .title Core team / directors
+      .members
+        - 4.times do
+
+          .member
+            .avatar
+              img src=@message_avatar
+
+            .name Sergio Mottola
+
+            .contact
+              a(href="#") @sergiotwitter
+
+
+  .feed
+    .blog
+      .heading Articles
+      .list
+
+    .twitter
+      .heading
+        span Twitter
+        a.follow(target="_blank" href="https://twitter.com/intent/user?screen_name=nuwehq") Follow @nuwehq
+      .list
+        //tweets will be rendered here
+
+
+
+
+
+
+  = include "_footer"

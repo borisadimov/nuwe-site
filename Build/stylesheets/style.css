@@ -1,0 +1,1033 @@
+@charset "UTF-8";
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #4a4a4a; }
+  @media screen and (min-width: 631px) and (max-width: 800px) {
+    html, body {
+      font-size: 14px; } }
+  @media screen and (max-width: 630px) {
+    html, body {
+      font-size: 12px; } }
+
+html, button, input, select, textarea {
+  color: #333;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  font-size: 44px;
+  font-size: 2.75rem; }
+
+h2 {
+  font-size: 26px;
+  font-size: 1.625rem; }
+  @media only screen and (min-width: small) {
+    h2 {
+      font-size: 33px;
+      font-size: 2.0625rem; } }
+
+h3 {
+  font-size: 22px;
+  font-size: 1.375rem; }
+  @media only screen and (min-width: small) {
+    h3 {
+      font-size: 27px;
+      font-size: 1.6875rem; } }
+
+h4 {
+  font-size: 18px;
+  font-size: 1.125rem; }
+  @media only screen and (min-width: small) {
+    h4 {
+      font-size: 22px;
+      font-size: 1.375rem; } }
+
+h5 {
+  font-size: 16px;
+  font-size: 1rem; }
+  @media only screen and (min-width: small) {
+    h5 {
+      font-size: 18px;
+      font-size: 1.125rem; } }
+
+h6 {
+  font-size: 16px;
+  font-size: 1rem; }
+  @media only screen and (min-width: small) {
+    h6 {
+      font-size: 18px;
+      font-size: 1.125rem; } }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+  font-weight: 200;
+  margin: 0 0 0.75rem; }
+  @media only screen and (min-width: small) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 1rem; } }
+
+p,
+ul,
+ol,
+dl {
+  margin: 0 0 1em;
+  text-align: left; }
+  p:last-child,
+  ul:last-child,
+  ol:last-child,
+  dl:last-child {
+    margin-bottom: 0; }
+  @media only screen and (min-width: small) {
+    p,
+    ul,
+    ol,
+    dl {
+      font-size: 22px;
+      font-size: 1.375rem;
+      margin: 0 0 2.0625rem; } }
+
+dt {
+  font-weight: 400; }
+
+.lead {
+  font-size: 20px;
+  font-size: 1.25rem; }
+  @media only screen and (min-width: small) {
+    .lead {
+      font-size: 24px;
+      font-size: 1.5rem; } }
+
+html {
+  background-color: #fff; }
+
+body {
+  font-size: 1em;
+  line-height: 1.5; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+figure {
+  margin-bottom: 2.0625rem; }
+  figure img {
+    display: block;
+    margin-bottom: 0.6875rem; }
+
+@media only screen and (min-width: small) {
+  figcaption {
+    font-size: 22px;
+    font-size: 1.375rem; } }
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle; }
+
+blockquote {
+  font-style: italic;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0; }
+  blockquote p {
+    font-size: 18px;
+    font-size: 1.125rem; }
+    @media only screen and (min-width: small) {
+      blockquote p {
+        font-size: 24px;
+        font-size: 1.5rem; } }
+  blockquote .cite {
+    font-style: normal; }
+    blockquote .cite:before {
+      content: "—"; }
+
+pre {
+  margin: 0; }
+
+code {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 0.8em;
+  padding: 0.2em 0.5em;
+  color: inherit;
+  position: relative;
+  top: -1px;
+  font-family: "Inconsolata", sans-serif; }
+  @media only screen and (min-width: small) {
+    code {
+      font-size: 22px;
+      font-size: 1.375rem; } }
+
+a {
+  color: #3fa9f5;
+  text-decoration: none;
+  transition: all 0.25s ease; }
+  a:hover {
+    color: #4a90e2; }
+  .colored a {
+    color: #ffffff; }
+    .colored a:hover {
+      color: #ffffff;
+      opacity: 0.8; }
+
+b {
+  font-weight: 600; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  line-height: 1.6;
+  resize: vertical; }
+
+.colored {
+  color: #ffffff; }
+
+p {
+  color: inherit; }
+
+.vertically-centred-content {
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.dev {
+  background: rgba(0, 0, 0, 0.15); }
+
+* {
+  box-sizing: border-box; }
+
+section {
+  position: relative;
+  min-width: 100%;
+  max-width: 100%;
+  overflow: hidden; }
+  section > div {
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+
+.container, .header .menu, .feed {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center; }
+  @media screen and (min-width: 631px) and (max-width: 800px) {
+    .container, .header .menu, .feed {
+      padding: 0 20px; } }
+  @media screen and (max-width: 630px) {
+    .container, .header .menu, .feed {
+      padding: 0 10px; } }
+
+.row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin-left: -1rem; }
+  .row.centered {
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  @media screen and (max-width: 630px) {
+    .row.stack {
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  @media screen and (max-width: 630px) {
+    .row.stack.centered {
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; } }
+
+.column {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 0 1rem; }
+
+.element {
+  margin: 3rem 0; }
+
+.header .menu {
+  height: 50px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font: 300 1.125rem/1.375rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.02em; }
+  .header .menu .logo {
+    max-width: 82px; }
+  .header .menu .message_icon {
+    width: 28px; }
+
+.hero {
+  height: calc(100vh - 50px);
+  background-size: cover;
+  position: relative;
+  overflow: hidden; }
+  .hero .text {
+    position: absolute;
+    text-align: center;
+    padding: 0 30px;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    color: #fff;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+    .hero .text .slogan {
+      font: 600 5rem/6.0625rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em; }
+
+.message {
+  padding: 80px 0 70px 0;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.1); }
+  .message .avatar img {
+    max-width: 196px;
+    max-height: 196px; }
+  .message .title {
+    color: #535353;
+    font: 200 2.875rem/3.75rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+    margin: 70px auto 105px auto; }
+  .message .text {
+    white-space: pre-line;
+    text-align: left;
+    font: 200 1.25rem/1.5625rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+    margin: 0 auto 90px auto;
+    max-width: 850px;
+    padding: 0 10px; }
+  .message .links {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .message .links a {
+      vertical-align: middle;
+      font: 200 1.5rem/2.8125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em; }
+      .message .links a:after {
+        margin-left: 0.5rem;
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 30px;
+        height: 30px;
+        background: url(/images/arrow_icon_blue.png) center center no-repeat;
+        background-size: cover; }
+
+.portfolio {
+  padding-bottom: 130px; }
+  .portfolio .container, .portfolio .header .menu, .header .portfolio .menu, .portfolio .feed {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 0 25px; }
+    @media screen and (min-width: 631px) and (max-width: 800px) {
+      .portfolio .container, .portfolio .header .menu, .header .portfolio .menu, .portfolio .feed {
+        padding: 0 15px; } }
+    @media screen and (max-width: 630px) {
+      .portfolio .container, .portfolio .header .menu, .header .portfolio .menu, .portfolio .feed {
+        padding: 0 5px; } }
+  .portfolio .portfolio_item {
+    cursor: pointer;
+    -webkit-flex: 0 0 392px;
+        -ms-flex: 0 0 392px;
+            flex: 0 0 392px;
+    height: 388px;
+    margin: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid #f1f1f1; }
+    .portfolio .portfolio_item .illustration {
+      height: 310px;
+      line-height: 310px;
+      vertical-align: middle; }
+      .portfolio .portfolio_item .illustration img {
+        max-height: 310px; }
+    .portfolio .portfolio_item .label {
+      font: 200 1.875rem/1.875rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #999999;
+      margin-top: 10px; }
+    .portfolio .portfolio_item:hover {
+      background: #fff;
+      -webkit-transform: scale(1.01);
+              transform: scale(1.01); }
+      .portfolio .portfolio_item:hover .details {
+        -webkit-transform: scale(0.1);
+                transform: scale(0.1); }
+    .portfolio .portfolio_item:nth-child(2) {
+      -webkit-flex: 0 0 800px;
+          -ms-flex: 0 0 800px;
+              flex: 0 0 800px; }
+    .portfolio .portfolio_item:nth-child(6) {
+      -webkit-flex: 0 0 1208px;
+          -ms-flex: 0 0 1208px;
+              flex: 0 0 1208px; }
+  .portfolio .details {
+    position: absolute;
+    display: none;
+    margin-bottom: 20px;
+    z-index: 2;
+    width: 1208px;
+    top: 412px;
+    background: #3fa9f5;
+    right: 30px;
+    left: 33.5px;
+    color: #FFFFFF;
+    padding: 40px 50px; }
+    .portfolio .details.show {
+      display: block; }
+    .portfolio .details .close {
+      width: 34px;
+      height: 34px;
+      background: url(/images/close_icon.png) center center no-repeat;
+      background-size: cover;
+      cursor: pointer;
+      position: absolute;
+      right: 30px;
+      top: 30px; }
+    .portfolio .details .arrow {
+      width: 117px;
+      height: 62px;
+      position: absolute;
+      top: -55px;
+      left: 80%;
+      z-index: 3; }
+      .portfolio .details .arrow img {
+        max-width: 117px;
+        width: 117px;
+        height: 57px; }
+    .portfolio .details .author {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row nowrap;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .portfolio .details .author .avatar img {
+        width: 64px; }
+      .portfolio .details .author .info {
+        text-align: left;
+        margin-left: 30px; }
+        .portfolio .details .author .info .name {
+          font: 600 1.125rem/1.5rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+          -webkit-font-smoothing: antialiased;
+          letter-spacing: 0.02em;
+          color: #FFFFFF; }
+        .portfolio .details .author .info .author_title {
+          font: 200 1.125rem/1.5rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+          -webkit-font-smoothing: antialiased;
+          letter-spacing: 0.02em;
+          color: #FFFFFF; }
+    .portfolio .details .title {
+      text-align: left;
+      margin: 50px 0 40px 0;
+      font: 200 1.875rem/2.1875rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #FFFFFF; }
+    .portfolio .details .text {
+      text-align: left;
+      white-space: pre-line;
+      font: 200 1.125rem/1.5625rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em; }
+    .portfolio .details .links {
+      margin-top: 30px;
+      text-align: left;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .portfolio .details .links a {
+        vertical-align: middle;
+        font: 200 1.5rem/2.8125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: 0.02em;
+        color: #fff; }
+        .portfolio .details .links a:after {
+          margin-left: 0.5rem;
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          width: 30px;
+          height: 30px;
+          background: url(/images/arrow_icon.png) center center no-repeat;
+          background-size: cover; }
+
+.team {
+  background: #f2f2f2;
+  padding: 120px 0; }
+  .team .title {
+    font: 200 2.5rem/3.0625rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+    color: #404040; }
+  .team .members {
+    margin: 100px 0 80px 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .team .members .member {
+      width: 180px;
+      text-align: center; }
+      .team .members .member .avatar {
+        margin: 0 auto;
+        width: 150px;
+        border-radius: 500px;
+        margin-bottom: 60px; }
+      .team .members .member .name {
+        color: #404040;
+        font: 200 1.5rem/1.875rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: 0.02em; }
+      .team .members .member .contact a {
+        font: 200 1.5rem/1.875rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: 0.02em; }
+
+.feed {
+  padding-top: 50px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-align: left;
+  padding-bottom: 50px; }
+  .feed .blog {
+    -webkit-flex: 0 0 706px;
+        -ms-flex: 0 0 706px;
+            flex: 0 0 706px; }
+  .feed .twitter {
+    -webkit-flex: 0 0 390px;
+        -ms-flex: 0 0 390px;
+            flex: 0 0 390px; }
+  .feed .heading {
+    font: 200 2.5rem/3.125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+    color: #6B6B6B;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 60px; }
+    .feed .heading a {
+      font: 600 1.5rem/3.125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em; }
+  .feed .blog .article {
+    border-top: 1px solid #E7E7E7;
+    padding: 30px 45px 45px 0; }
+    .feed .blog .article .date {
+      font: 300 1rem/1.125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #6D6D6D; }
+    .feed .blog .article .title {
+      font: 400 1.5rem/1.8125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #3fa9f5;
+      margin: 16px 0; }
+    .feed .blog .article .text {
+      font: 300 1rem/1.375rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #666666; }
+  .feed .twitter .tweet-container {
+    border: 1px solid #F2F2F2;
+    box-shadow: 0px 2px 4px 0px rgba(217, 217, 217, 0.5);
+    margin-bottom: 20px;
+    padding: 25px 23px 23px 16px; }
+    .feed .twitter .tweet-container .user {
+      margin-bottom: 25px; }
+      .feed .twitter .tweet-container .user a > span {
+        font: 300 0.875rem/1.125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: 0.02em;
+        display: block; }
+        .feed .twitter .tweet-container .user a > span > span {
+          font: 600 1.125rem/1.5rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+          -webkit-font-smoothing: antialiased;
+          letter-spacing: 0.02em;
+          margin-top: 3px;
+          color: #888888;
+          display: block; }
+      .feed .twitter .tweet-container .user img {
+        border-radius: 500px;
+        float: left;
+        margin-right: 15px;
+        margin-top: -3px; }
+      .feed .twitter .tweet-container .user::after {
+        clear: both;
+        content: "";
+        display: table; }
+    .feed .twitter .tweet-container .tweet {
+      font: 400 0.9375rem/1.25rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #AFAFAF;
+      margin: 26px 0; }
+    .feed .twitter .tweet-container .timePosted {
+      font: 400 0.8125rem/1.1875rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #AFAFAF;
+      padding-left: 26px;
+      background: url(/images/clock.png) left center no-repeat;
+      background-size: 16px 16px; }
+      .feed .twitter .tweet-container .timePosted a {
+        color: #AFAFAF; }
+
+.footer {
+  height: 50px;
+  background: #3fa9f5;
+  color: #ffffff;
+  font: 400 1.125rem/3.125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.02em; }
+  .footer .container, .footer .header .menu, .header .footer .menu, .footer .feed {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+/*# sourceMappingURL=style.css.map */

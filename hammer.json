@@ -1,0 +1,30 @@
+{
+  "sourcemaps": true,
+  "autoprefixer":
+  {
+    "browsers": "last 2 versions"
+  },
+  "contentful":
+  {
+    "apiKey": "54c7cf81d6c2686d5b4f092d6678fa545e05f7a4956af4582ef84261b3d7a7d1",
+    "spaces":
+    {
+      "default":
+      {
+        "id": "jbusn4pmd7kt",
+        "contentTypes":
+        {
+          "author": "Author",
+          "category": "Category",
+          "posts":
+          {
+            "name": "Post",
+            "template": "templates/_post.slim",
+            "urlAliasPrefix": "contentful",
+            "urlAliasSource": "slug"
+          }
+        }
+      }
+    }
+  }
+}

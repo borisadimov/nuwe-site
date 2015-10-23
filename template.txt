@@ -1,0 +1,2 @@
+Author: Boris Adimov
+Version: 1.0

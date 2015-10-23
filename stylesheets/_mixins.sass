@@ -1,0 +1,118 @@
+@function Rem($size)
+  $remSize: $size / $base-font-size
+  @return $remSize * 1rem
+
+
+
+
+@function em($size, $context: $base-font-size)
+  @return $size / $context + em
+
+// Px to rem sixing
+@function rem($size, $context: $base-font-size)
+  @return $size / $context + rem
+
+// Px to rem sizing with px fallout
+=font-size($size)
+  font-size: $size + px
+  font-size: $size / $base-font-size + rem
+
+
+=size($width: auto, $height: $width)
+  width: $width
+  height: $height
+
+
+=thin($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: Rem($size)
+  @if unit($line) == ""
+    $line: Rem($line)
+  font: 200 #{$size}/#{$line} 'Helvetica Neue', Helvetica Neue, Helvetica, Arial
+  -webkit-font-smoothing: antialiased
+  letter-spacing: $space
+
+
+=light($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: Rem($size)
+  @if unit($line) == ""
+    $line: Rem($line)
+  font: 300 #{$size}/#{$line} 'Helvetica Neue', Helvetica Neue, Helvetica, Arial
+  -webkit-font-smoothing: antialiased
+  letter-spacing: $space
+
+
+=regular($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: Rem($size)
+  @if unit($line) == ""
+    $line: Rem($line)
+  font: 400 #{$size}/#{$line} 'Helvetica Neue', Helvetica Neue, Helvetica, Arial
+  -webkit-font-smoothing: antialiased
+  letter-spacing: $space
+
+=medium($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: Rem($size)
+  @if unit($line) == ""
+    $line: Rem($line)
+  font: 600 #{$size}/#{$line} 'Helvetica Neue', Helvetica Neue, Helvetica, Arial
+  -webkit-font-smoothing: antialiased
+  letter-spacing: $space
+
+=bold($size: 1rem, $line: 1.5rem, $space: 0.02em)
+  @if unit($size) == ""
+    $size: Rem($size)
+  @if unit($line) == ""
+    $line: Rem($line)
+  font: 700 #{$size}/#{$line} 'Helvetica Neue', Helvetica Neue, Helvetica, Arial
+  -webkit-font-smoothing: antialiased
+  letter-spacing: $space
+
+
+
+
+
+=respond-to($screen)
+  @if $screen == small
+    @media only screen and (min-width: $small)
+      @content
+  @else if $screen == medium
+    @media only screen and (min-width: $medium)
+      @content
+  @else if $screen == big
+    @media only screen and (min-width: $big)
+      @content
+  @else
+    @media only screen and (min-width: $screen)
+      @content
+
+
+=mobile()
+  +max-screen(630px)
+    @content
+
+=tablet()
+  +screen(631px,800px)
+    @content
+
+=hd()
+  +min-screen(1200px)
+    @content
+
+
+
+
+
+// Selection
+=selection
+  background: #b3d4fc
+  text-shadow: none
+
+
+=respond-to($screen)
+  @media only screen and (min-width: $screen)
+    @content
+
+

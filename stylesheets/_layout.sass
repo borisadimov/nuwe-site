@@ -1,0 +1,55 @@
+*
+  box-sizing: border-box
+
+section
+  position: relative
+  min-width: 100%
+  max-width: 100%
+  overflow: hidden
+  >div
+    padding-top: 2rem
+    padding-bottom: 2rem
+
+
+.container
+  width: 100%
+  max-width: 1280px
+  min-height: 100%
+  margin: 0 auto
+  position: relative
+  padding-left: 30px
+  padding-right: 30px
+  text-align: center
+  +tablet
+    padding: 0 20px
+  +mobile
+    padding: 0 10px
+
+
+.row
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: space-around
+  margin-left: -1rem
+
+  &.centered
+    justify-content: center
+
+  &.stack
+    +mobile
+      flex-direction: column
+    &.centered
+      +mobile
+        align-items: center
+
+
+
+.column
+  display: flex
+  flex-flow: column nowrap
+  padding: 0 1rem
+
+
+.element
+  margin: 3rem 0

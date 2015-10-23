@@ -1,0 +1,86 @@
+.feed
+  @extend .container
+  padding-top: 50px
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: flex-start
+  text-align: left
+  padding-bottom: 50px
+
+  .blog
+    flex: 0 0 706px
+
+  .twitter
+    flex: 0 0 390px
+
+  .heading
+    +thin(40, 50)
+    color: #6B6B6B
+    display: flex
+    justify-content: space-between
+    margin-bottom: 60px
+    a
+      +medium(24, 50)
+
+
+  .blog
+    .article
+      border-top: 1px solid #E7E7E7
+      padding: 30px 45px 45px 0
+
+      .date
+        +light(16,18)
+        color: #6D6D6D
+
+      .title
+        +regular(24,29)
+        color: $blue
+        margin: 16px 0
+
+      .text
+        +light(16, 22)
+        color: #666666
+
+
+  .twitter
+    .tweet-container
+      border: 1px solid #F2F2F2
+      box-shadow: 0px 2px 4px 0px rgba(217,217,217,0.50)
+      margin-bottom: 20px
+      padding: 25px 23px 23px 16px
+      .user
+        & a > span
+          +light(14,18)
+          display: block
+          & > span
+            +medium(18,24)
+            margin-top: 3px
+            color: #888888
+            display: block
+        img
+          border-radius: 500px
+          float: left
+          margin-right: 15px
+          margin-top: -3px
+        +clearfix
+        margin-bottom: 25px
+
+
+      .tweet
+        +regular(15,20)
+        color: #AFAFAF
+        margin: 26px 0
+
+      .timePosted
+        +regular(13,19)
+        color: #AFAFAF
+        a
+          color: #AFAFAF
+        padding-left: 26px
+        background: url(/images/clock.png) left center no-repeat
+        background-size: 16px 16px
+
+
+
+

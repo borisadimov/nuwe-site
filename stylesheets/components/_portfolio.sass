@@ -1,0 +1,148 @@
+$portfolio_item_width: 392px
+$portfolio_item_height: 388px
+
+$container_padding: 30px
++tablet
+  $container_padding: 20px
++mobile
+  $container_padding: 10px
+
+.portfolio
+  padding-bottom: 130px
+  .container
+    display: flex
+    flex-flow: row wrap
+    justify-content: flex-start
+    padding: 0 25px
+    +tablet
+      padding: 0 15px
+
+    +mobile
+      padding: 0 5px
+
+  .portfolio_item
+    cursor: pointer
+    flex: 0 0 $portfolio_item_width
+    height: $portfolio_item_height
+    margin: 8px
+    transition: all 0.3s ease
+    border: 1px solid #f1f1f1
+
+
+    .illustration
+      height: 310px
+      line-height: 310px
+      vertical-align: middle
+      img
+        max-height: 310px
+
+    .label
+      +thin(30,30)
+      color: #999999
+      margin-top: 10px
+
+    &:hover
+      background: #fff
+      transform: scale(1.01)
+
+      .details
+        transform: scale(0.1)
+
+
+    &:nth-child(2)
+      flex: 0 0 $portfolio_item_width*2+16
+
+    &:nth-child(6)
+      flex: 0 0 $portfolio_item_width*3+32
+
+
+  .details
+    position: absolute
+    display: none
+    margin-bottom: 20px
+    z-index: 2
+    width: $portfolio_item_width * 3 + 32
+    top:  $portfolio_item_height + 24
+
+    background: $blue
+    right: $container_padding
+    left: $container_padding+3.5
+    color: #FFFFFF
+    padding: 40px 50px
+    &.show
+      display: block
+
+    .close
+      width: 34px
+      height: 34px
+      background: url(/images/close_icon.png) center center no-repeat
+      background-size: cover
+      cursor: pointer
+      position: absolute
+      right: 30px
+      top: 30px
+
+    .arrow
+      width: 117px
+      height: 62px
+      position: absolute
+      top: -55px
+      left: 80%
+      z-index: 3
+      img
+        max-width: 117px
+        width: 117px
+        height: 57px
+
+    .author
+      display: flex
+      flex-flow: row nowrap
+      align-items: center
+      .avatar
+        img
+          width: 64px
+
+      .info
+        text-align: left
+        margin-left: 30px
+        .name
+          +medium(18,24)
+          color: #FFFFFF
+        .author_title
+          +thin(18,24)
+          color: #FFFFFF
+
+    .title
+      text-align: left
+      margin: 50px 0 40px 0
+      +thin(30,35)
+      color: #FFFFFF
+
+    .text
+      text-align: left
+      white-space: pre-line
+      +thin(18,25)
+
+    .links
+      margin-top: 30px
+      text-align: left
+      display: flex
+      justify-content: space-between
+
+      a
+        vertical-align: middle
+        +thin(24,45)
+        color: #fff
+        &:after
+          margin-left: 0.5rem
+          content: ""
+          display: inline-block
+          vertical-align: middle
+          width: 30px
+          height: 30px
+          background: url(/images/arrow_icon.png) center center no-repeat
+          background-size: cover
+
+
+
+

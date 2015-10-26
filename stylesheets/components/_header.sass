@@ -20,4 +20,48 @@ $header-height: 50px
       width: 28px
 
 
+.fullpage_menu
+  background: $blue
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  overflow-y: scroll
+  z-index: 100
+  color: #fff
+  display: flex
+  justify-content: center
+  a
+    color: #fff
+    +medium(75,97)
 
+  .close
+    width: 34px
+    height: 34px
+    background: url(/images/close_icon.png) center center no-repeat
+    background-size: cover
+    cursor: pointer
+    position: absolute
+    right: 30px
+    top: 30px
+
+  .menu
+    display: flex
+    padding: 100px 0
+    flex-flow: column nowrap
+    align-items: center
+    justify-content: space-between
+
+
+    .social
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      width: 60%
+      a
+        img
+          height: 60px
+
+    .message_icon
+      height: 40px

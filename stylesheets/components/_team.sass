@@ -1,9 +1,19 @@
 .team
   background: #f2f2f2
   padding: 120px 0
+  +tablet
+    padding: 80px 0 20px 0
+  +mobile
+    padding: 60px 0 10px 0
   .title
     +thin(40,49)
     color: #404040
+    +tablet
+      span
+        display: none
+    +mobile
+      span
+        display: none
 
   .members
     margin: 100px 0 80px 0
@@ -11,14 +21,35 @@
     flex-flow: row nowrap
     justify-content: space-between
 
+    +tablet
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+      margin: 80px 0 60px 0
+    +mobile
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+      margin: 60px 0 45px 0
+
     .member
       width: 180px
       text-align: center
+      margin: 0 20px 40px 20px
+      +tablet
+        margin: 0 20px 60px 20px
+      +mobile
+        margin: 0 20px 60px 20px
+
       .avatar
         margin: 0 auto
         width: 150px
         border-radius: 500px
         margin-bottom: 60px
+        +tablet
+          margin-bottom: 50px
+        +mobile
+          margin-bottom: 40px
 
       .name
         color: #404040

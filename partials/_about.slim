@@ -1,0 +1,15 @@
+.message
+  .container
+    .avatar
+      img src=container.aboutComponent.authorImage
+
+
+    .title
+      =container.aboutComponent.title
+
+    .text
+      =container.aboutComponent.body
+
+    .links
+      - container.aboutComponent.link.each do |link|
+        a(href=link.href) =link.text

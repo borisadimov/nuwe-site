@@ -669,9 +669,7 @@ section {
   overflow-y: scroll;
   z-index: 100;
   color: #fff;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }

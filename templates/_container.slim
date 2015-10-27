@@ -12,31 +12,31 @@ body
       a(href="#")
         img.message_icon src=@message_icon
 
-  .hero(style="background-image: url('#{container.bannerComponent.to_h[:bannerImage]}')")
+  .hero(style="background-image: url('#{container.bannerComponent.bannerImage}')")
     .text
-      .slogan =container.bannerComponent.to_h[:mainTitle]
+      .slogan =container.bannerComponent.mainTitle
 
 
   .message
     .container
       .avatar
-        img src=container.aboutComponent.to_h[:authorImage]
+        / img src=container.aboutComponent.authorImage
 
       .title
-        =container.aboutComponent.to_h[:title]
+        / =container.aboutComponent.title
 
       .text
-        =container.aboutComponent.to_h[:body]
+        / =container.aboutComponent.body
 
       .links
-        / - container.aboutComponent.to_h[:link].each do |link|
+        / - container.aboutComponent.link.each do |link|
         /   a(href=link.href) =link.text
 
 
 
   .portfolio
     .container
-        / - array = container.portfolioComponent.to_h[:portfolioArticle]
+        / - array = container.portfolioComponent.portfolioArticle
         / = array.length
         / = item.inspect
           .portfolio_item(data-index="#{index}")

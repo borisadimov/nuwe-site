@@ -9,24 +9,32 @@ $container_padding: 30px
 
 .portfolio
   padding-bottom: 130px
+  padding-top: 30px
+  +tablet
+    padding-bottom: 80px
+  +mobile
+    padding-bottom: 50px
   .container
     display: flex
     flex-flow: row wrap
     justify-content: flex-start
     padding: 0 25px
-    +tablet
-      padding: 0 15px
 
-    +mobile
-      padding: 0 5px
+
 
   .portfolio_item
     cursor: pointer
-    flex: 0 0 $portfolio_item_width
+    flex: 0 1 31%
     height: $portfolio_item_height
     margin: 8px
     transition: all 0.3s ease
     border: 1px solid #f1f1f1
+    +tablet
+      flex: 0 0 100%
+      margin: 12px 0
+    +mobile
+      flex: 0 0 100%
+      margin: 12px 0
 
 
     .illustration
@@ -49,11 +57,23 @@ $container_padding: 30px
         transform: scale(0.1)
 
 
-    &:nth-child(2)
-      flex: 0 0 $portfolio_item_width*2+16
+    &:nth-child(3)
+      flex: 0 1 calc(62% + 16px)
 
-    &:nth-child(6)
-      flex: 0 0 $portfolio_item_width*3+32
+      +tablet
+        flex: 0 0 100%
+
+      +mobile
+        flex: 0 0 100%
+
+    &:nth-child(11)
+      flex: 0 1 calc(93% + 32px)
+
+      +tablet
+        flex: 0 0 100%
+
+      +mobile
+        flex: 0 0 100%
 
 
   .details

@@ -1,8 +1,21 @@
 .footer
-  height: 50px
+  min-height: 50px
   background: $blue
   color: #ffffff
   +regular(18,50)
   .container
     display: flex
     justify-content: space-between
+
+    +mobile
+      justify-content: center
+      flex-flow: column-reverse nowrap
+      align-items: center
+      +regular(18,38)
+      padding: 8px 0
+    +tablet
+      justify-content: center
+      flex-flow: column-reverse nowrap
+      align-items: center
+      +regular(18,38)
+      padding: 8px 0

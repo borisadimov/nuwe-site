@@ -2,15 +2,7 @@
 = include "_head"
 
 body
-  .header
-    .menu
-      img.logo src=@nuwe_logo
-
-      a(href="#") Integration
-      a(href="#") Development
-      a(href="#") Technology
-      a(href="#")
-        img.message_icon src=@message_icon
+  = include "_header"
 
   .hero(style="background-image: url('#{@hero}')")
     .text
@@ -64,7 +56,11 @@ body
 
   .team
     .container
-      .title Core team / directors
+      .title
+        | Core team
+        = " "
+        span
+          | / directors
       .members
         - 4.times do
 

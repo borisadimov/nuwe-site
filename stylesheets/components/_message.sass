@@ -1,15 +1,36 @@
 .message
   padding: 80px 0 70px 0
   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.1)
+
+  +tablet
+    padding: 60px 0 40px 0
+  +mobile
+    padding: 40px 0 24px 0
+
   .avatar
     img
       max-width: 196px
       max-height: 196px
 
+      +tablet
+        max-width: 100px
+        max-height: 100px
+
+      +mobile
+        max-width: 64px
+        max-height: 64px
+
+
   .title
     color: #535353
     +thin(46,60)
     margin: 70px auto 105px auto
+    +tablet
+      margin: 60px auto 60px auto
+      +thin(38,50)
+    +mobile
+      margin: 24px auto 40px auto
+      +thin(34,46)
 
 
   .text
@@ -19,14 +40,44 @@
     margin: 0 auto 90px auto
     max-width: 850px
     padding: 0 10px
+    +tablet
+      padding: 0 20px
+      margin: 0 auto 60px auto
+    +mobile
+      padding: 0 20px
+      margin: 0 auto 40px auto
 
 
   .links
     display: flex
+    flex-flow: row wrap
     justify-content: space-between
     a
+      flex: 0 0 auto
       vertical-align: middle
+      margin-bottom: 20px
+      padding-right: 15px
       +thin(24,45)
+
+
+      +tablet
+        width: 100%
+        border-top: 1px solid #E7E7E7
+        text-align: left
+        padding-top: 20px
+        padding-right: 40%
+        padding-left: 20px
+        +thin(24,40)
+
+      +mobile
+        width: 100%
+        border-top: 1px solid #E7E7E7
+        text-align: left
+        padding-top: 20px
+        padding-right: 40%
+        padding-left: 20px
+        +thin(24,40)
+
       &:after
         margin-left: 0.5rem
         content: ""
@@ -36,3 +87,10 @@
         height: 30px
         background: url(/images/arrow_icon_blue.png) center center no-repeat
         background-size: cover
+        +tablet
+          display: block
+          margin: 0.66rem 0 0 0
+        +mobile
+          display: block
+          margin: 0.66rem 0 0 0
+

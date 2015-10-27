@@ -4,13 +4,13 @@
 body
   = include "_header"
 
-  - unless container.bannerComponent.nil?
+  - if container.bannerComponent?
     = include "_hero"
 
-  - unless container.aboutComponent.nil?
+  - if container.aboutComponent?
     = include "_about"
 
-  - unless container.portfolioComponent.nil?
+  - if container.portfolioComponent?
     = include "_portfolio"
 
   - if true

@@ -634,6 +634,9 @@ section {
 .element {
   margin: 3rem 0; }
 
+.noscroll {
+  overflow: hidden; }
+
 .header .menu {
   height: 50px;
   display: -webkit-flex;
@@ -654,10 +657,57 @@ section {
   font: 300 1.125rem/1.375rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.02em; }
+  .header .menu .slug {
+    display: none; }
   .header .menu .logo {
     max-width: 82px; }
   .header .menu .message_icon {
     width: 28px; }
+  .header .menu .toggle_menu {
+    width: 21px;
+    height: 7px;
+    border-top: 1.5px solid #3fa9f5;
+    border-bottom: 1.5px solid #3fa9f5;
+    cursor: pointer; }
+  .header .menu.homepage .toggle_menu {
+    display: none; }
+  @media screen and (min-width: 631px) and (max-width: 800px) {
+    .header .menu.homepage .link, .header .menu.homepage .send_mail {
+      display: none; }
+    .header .menu.homepage .toggle_menu {
+      display: block; } }
+  @media screen and (max-width: 630px) {
+    .header .menu.homepage .link, .header .menu.homepage .send_mail {
+      display: none; }
+    .header .menu.homepage .toggle_menu {
+      display: block; } }
+  .header .menu:not(.homepage) {
+    -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse; }
+    @media screen and (min-width: 631px) and (max-width: 800px) {
+      .header .menu:not(.homepage) {
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row; }
+        .header .menu:not(.homepage) .send_mail {
+          display: none; } }
+    @media screen and (max-width: 630px) {
+      .header .menu:not(.homepage) {
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row; }
+        .header .menu:not(.homepage) .send_mail {
+          display: none; } }
+    .header .menu:not(.homepage) .slug {
+      display: block;
+      text-transform: capitalize;
+      font: 300 1.125rem/1.375rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em;
+      color: #3fa9f5; }
+    .header .menu:not(.homepage) .link, .header .menu:not(.homepage) .logo {
+      display: none; }
 
 .fullpage_menu {
   background: #3fa9f5;
@@ -666,13 +716,20 @@ section {
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll;
   z-index: 100;
   color: #fff;
-  display: none;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease; }
+  .fullpage_menu.show {
+    max-height: 100vh;
+    overflow-y: scroll; }
   .fullpage_menu a {
     color: #fff;
     font: 600 4.6875rem/6.0625rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
@@ -913,31 +970,31 @@ section {
       .portfolio .portfolio_item:hover .details {
         -webkit-transform: scale(0.1);
                 transform: scale(0.1); }
-    .portfolio .portfolio_item:nth-child(3) {
+    .portfolio .portfolio_item.double {
       -webkit-flex: 0 1 calc(62% + 16px);
           -ms-flex: 0 1 calc(62% + 16px);
               flex: 0 1 calc(62% + 16px); }
       @media screen and (min-width: 631px) and (max-width: 800px) {
-        .portfolio .portfolio_item:nth-child(3) {
+        .portfolio .portfolio_item.double {
           -webkit-flex: 0 0 100%;
               -ms-flex: 0 0 100%;
                   flex: 0 0 100%; } }
       @media screen and (max-width: 630px) {
-        .portfolio .portfolio_item:nth-child(3) {
+        .portfolio .portfolio_item.double {
           -webkit-flex: 0 0 100%;
               -ms-flex: 0 0 100%;
                   flex: 0 0 100%; } }
-    .portfolio .portfolio_item:nth-child(11) {
+    .portfolio .portfolio_item.tripple {
       -webkit-flex: 0 1 calc(93% + 32px);
           -ms-flex: 0 1 calc(93% + 32px);
               flex: 0 1 calc(93% + 32px); }
       @media screen and (min-width: 631px) and (max-width: 800px) {
-        .portfolio .portfolio_item:nth-child(11) {
+        .portfolio .portfolio_item.tripple {
           -webkit-flex: 0 0 100%;
               -ms-flex: 0 0 100%;
                   flex: 0 0 100%; } }
       @media screen and (max-width: 630px) {
-        .portfolio .portfolio_item:nth-child(11) {
+        .portfolio .portfolio_item.tripple {
           -webkit-flex: 0 0 100%;
               -ms-flex: 0 0 100%;
                   flex: 0 0 100%; } }
@@ -946,15 +1003,31 @@ section {
     display: none;
     margin-bottom: 20px;
     z-index: 2;
-    width: 1208px;
-    top: 412px;
     background: #3fa9f5;
     right: 30px;
     left: 33.5px;
     color: #FFFFFF;
     padding: 40px 50px; }
+    @media screen and (max-width: 630px) {
+      .portfolio .details {
+        top: initial !important;
+        right: initial !important;
+        left: initial !important;
+        display: block;
+        position: relative;
+        max-height: 0;
+        -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+        padding: 0 20px;
+        transition: all 0.7s ease;
+        overflow: hidden; } }
     .portfolio .details.show {
       display: block; }
+      @media screen and (max-width: 630px) {
+        .portfolio .details.show {
+          max-height: 100vmax;
+          padding: 20px 20px; } }
     .portfolio .details .close {
       width: 34px;
       height: 34px;
@@ -971,6 +1044,12 @@ section {
       top: -55px;
       left: 80%;
       z-index: 3; }
+      @media screen and (min-width: 631px) and (max-width: 800px) {
+        .portfolio .details .arrow {
+          display: none; } }
+      @media screen and (max-width: 630px) {
+        .portfolio .details .arrow {
+          display: none; } }
       .portfolio .details .arrow img {
         max-width: 117px;
         width: 117px;
@@ -1324,4 +1403,3 @@ section {
         -webkit-font-smoothing: antialiased;
         letter-spacing: 0.02em;
         padding: 8px 0; } }
-/*# sourceMappingURL=style.css.map */

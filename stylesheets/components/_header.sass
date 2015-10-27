@@ -11,13 +11,57 @@ $header-height: 50px
     align-items: center
     +light(18, 22)
 
+    .slug
+      display: none
 
     .logo
-
       max-width: 82px
 
     .message_icon
       width: 28px
+
+    .toggle_menu
+      width: 21px
+      height: 7px
+      border-top: 1.5px solid $blue
+      border-bottom: 1.5px solid $blue
+      cursor: pointer
+
+    &.homepage
+      .toggle_menu
+        display: none
+
+      +tablet
+        .link, .send_mail
+          display: none
+        .toggle_menu
+          display: block
+
+      +mobile
+        .link, .send_mail
+          display: none
+        .toggle_menu
+          display: block
+
+
+    &:not(.homepage)
+      flex-direction: row-reverse
+      +tablet
+        flex-direction: row
+        .send_mail
+          display: none
+      +mobile
+        flex-direction: row
+        .send_mail
+          display: none
+      .slug
+        display: block
+        text-transform: capitalize
+        +light(18, 22)
+        color: $blue
+      .link, .logo
+        display: none
+
 
 
 .fullpage_menu
@@ -28,12 +72,17 @@ $header-height: 50px
   left: 0
   width: 100vw
   height: 100vh
-  overflow-y: scroll
   z-index: 100
   color: #fff
-  // display: flex
-  display: none
+  display: flex
   justify-content: center
+  max-height: 0
+  overflow: hidden
+  transition: all 0.5s ease
+  &.show
+    max-height: 100vh
+    overflow-y: scroll
+
   a
     color: #fff
     +medium(75,97)

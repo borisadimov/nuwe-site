@@ -13,35 +13,12 @@ body
   - unless container.portfolioComponent.nil?
     = include "_portfolio"
 
-
-  .team
-    .container
-      .title Core team / directors
-      .members
-        - 4.times do
-
-          .member
-            .avatar
-              img src=@message_avatar
-
-            .name Sergio Mottola
-
-            .contact
-              a(href="#") @sergiotwitter
+  - if true
+    = include "_team"
 
 
-  .feed
-    .blog
-      .heading Articles
-      .list
-
-    .twitter
-      .heading
-        span Twitter
-        a.follow(target="_blank" href="https://twitter.com/intent/user?screen_name=nuwehq") Follow @nuwehq
-      .list
-        //tweets will be rendered here
-
+  - if container.footer
+    = include "_feed"
 
 
 

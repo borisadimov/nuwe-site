@@ -57,7 +57,7 @@ $container_padding: 30px
         transform: scale(0.1)
 
 
-    &:nth-child(3)
+    &.double
       flex: 0 1 calc(62% + 16px)
 
       +tablet
@@ -66,7 +66,7 @@ $container_padding: 30px
       +mobile
         flex: 0 0 100%
 
-    &:nth-child(11)
+    &.tripple
       flex: 0 1 calc(93% + 32px)
 
       +tablet
@@ -81,16 +81,32 @@ $container_padding: 30px
     display: none
     margin-bottom: 20px
     z-index: 2
-    width: $portfolio_item_width * 3 + 32
-    top:  $portfolio_item_height + 24
+    // width: $portfolio_item_width * 3 + 32
+    // top:  $portfolio_item_height + 24
 
     background: $blue
     right: $container_padding
     left: $container_padding+3.5
     color: #FFFFFF
     padding: 40px 50px
+
+    +mobile
+      top: initial !important
+      right: initial !important
+      left: initial !important
+      display: block
+      position: relative
+      max-height: 0
+      flex: 0 0 100%
+      padding: 0 20px
+      transition: all .7s ease
+      overflow: hidden
+
     &.show
       display: block
+      +mobile
+        max-height: 100vmax
+        padding: 20px 20px
 
     .close
       width: 34px
@@ -109,6 +125,10 @@ $container_padding: 30px
       top: -55px
       left: 80%
       z-index: 3
+      +tablet
+        display: none
+      +mobile
+        display: none
       img
         max-width: 117px
         width: 117px

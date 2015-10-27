@@ -3,10 +3,16 @@
 function ready(fn) {
   if (document.readyState != 'loading'){
     fn();
-  } else {
+  } else if (document.addEventListener) {
     document.addEventListener('DOMContentLoaded', fn);
+  } else {
+    document.attachEvent('onreadystatechange', function() {
+      if (document.readyState != 'loading')
+        fn();
+    });
   }
 }
+
 
 
 
@@ -42,38 +48,45 @@ ready(function(){
 
   twitterFetcher.fetch(config)
 
-  $.getJSON('http://blog.nuwe.co/articles?format=json&callback=?').done(function(data){
-      if (!data.items.length) {return}
-      var element = document.querySelector('.blog .list');
-      var html = '';
-      $.each(data.items, function(i,e){
-        if (i < 4) {
 
-          var date = new Date(e.publishOn)
-          var day = date.getDate() > 9 ? ''+date.getDate() : '0'+date.getDate()
-          var month = date.getMonth() > 8 ? ''+date.getMonth() + 1 : '0'+date.getMonth() + 1
-          var year = ''+date.getFullYear()
 
-          text_date = day+'.'+month+'.'+year
+  window.posts = function(data) {
+    if (!data.items.length) {return}
+    var element = document.querySelector('.blog .list');
+    var html = '';
+    Array.prototype.forEach.call(data.items, function(e, i){
+      if (i < 4) {
+        var date = new Date(e.publishOn)
+        var day = date.getDate() > 9 ? ''+date.getDate() : '0'+date.getDate()
+        var month = date.getMonth() > 8 ? ''+date.getMonth() + 1 : '0'+date.getMonth() + 1
+        var year = ''+date.getFullYear()
 
-          html += "<div class='article'>"
-             + "<div class='date'>"
-                 + text_date
-             + "</div>"
-             + "<div class='title'>"
-               + "<a href='http://blog.nuwe.co"+e.fullUrl+"'>"
-                 + e.title
-               + "</a>"
-             + "</div>"
-             + "<div class='text'>"
-                 + e.excerpt
-             + "</div>"
+        text_date = day+'.'+month+'.'+year
+
+        html += "<div class='article'>"
+           + "<div class='date'>"
+               + text_date
            + "</div>"
-        }
-      })
-      element.innerHTML = html;
-
+           + "<div class='title'>"
+             + "<a href='http://blog.nuwe.co"+e.fullUrl+"'>"
+               + e.title
+             + "</a>"
+           + "</div>"
+           + "<div class='text'>"
+               + e.excerpt
+           + "</div>"
+         + "</div>"
+      }
     })
+    element.innerHTML = html;
+
+  }
+
+  var scr = document.createElement('script')
+  scr.src = 'http://blog.nuwe.co/articles?format=json&callback=posts'
+  document.body.appendChild(scr)
+
+
 
 
   $('.portfolio_item').click(function(e){
@@ -94,6 +107,20 @@ ready(function(){
     $(this).parent().removeClass('show')
   })
 
+  $('.logo').click(function(e){
+    $('.fullpage_menu').addClass('show');
+    $('body').addClass('noscroll');
+  })
+
+  $('.fullpage_menu .close').click(function(){
+    $('.fullpage_menu').removeClass('show');
+    $('body').removeClass('noscroll')
+  })
+
+  $('.toggle_menu').click(function(){
+    $('.fullpage_menu').toggleClass('show');
+    $('body').toggleClass('noscroll');
+  })
 
 });
 

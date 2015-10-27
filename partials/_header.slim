@@ -1,24 +1,24 @@
 .header
-  .menu
+  .menu(class="#{ container.homePage ? 'homepage' : ''}")
     img.logo src=@nuwe_logo
-
-    a(href="#") Integration
-    a(href="#") Development
-    a(href="#") Technology
-    a(href="#")
+    a.link(href="/digital.html") Integration
+    a.link(href="/cube.html") Development
+    a.link(href="/technology.html") Technology
+    a.send_mail(href="#")
       img.message_icon src=@message_icon
-
+    .slug = container.slug
     .toggle_menu
+
 
 
 .fullpage_menu
   .close
 
   .menu
-    a(href="#") Nuwe
-    a(href="#") Integration
-    a(href="#") Development
-    a(href="#") Technology
+    a(href="/") Nuwe
+    a(href="/digital.html") Integration
+    a(href="/cube.html") Development
+    a(href="/technology.html") Technology
 
     .social
       a.gh(href="#")

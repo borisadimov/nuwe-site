@@ -1,27 +1,29 @@
-= include "_var"
-= include "_head"
+doctype html
+html lang="en"
+  = include "_var"
+  = include "_head"
 
-body
-  = include "_header"
+  body
+    = include "_header"
 
-  - if container.bannerComponent?
-    = include "_hero"
+    - if container.bannerComponent?
+      = include "_hero"
 
-  - if container.aboutComponent?
-    = include "_about"
+    - if container.aboutComponent?
+      = include "_about"
 
-  - if container.portfolioComponent?
-    = include "_portfolio"
+    - if container.portfolioComponent?
+      = include "_portfolio"
 
-  - if container.teamComponent?
-    = include "_team"
-
-
-  - if container.footer
-    = include "_feed"
+    - if container.teamComponent?
+      = include "_team"
 
 
+    - if container.footer
+      = include "_feed"
 
 
 
-  = include "_footer"
+
+
+    = include "_footer"

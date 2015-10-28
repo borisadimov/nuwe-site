@@ -57,7 +57,7 @@ $container_padding: 30px
         transform: scale(0.1)
 
 
-    &.double
+    &.col-2
       flex: 0 1 calc(62% + 16px)
 
       +tablet
@@ -66,7 +66,7 @@ $container_padding: 30px
       +mobile
         flex: 0 0 100%
 
-    &.tripple
+    &.col-3
       flex: 0 1 calc(93% + 32px)
 
       +tablet
@@ -90,6 +90,17 @@ $container_padding: 30px
     color: #FFFFFF
     padding: 40px 50px
 
+    +tablet
+      top: initial !important
+      right: initial !important
+      left: initial !important
+      display: block
+      position: relative
+      max-height: 0
+      flex: 0 0 100%
+      padding: 0 20px
+      transition: all .7s ease
+      overflow: hidden
     +mobile
       top: initial !important
       right: initial !important
@@ -104,6 +115,11 @@ $container_padding: 30px
 
     &.show
       display: block
+
+      +tablet
+        max-height: 100vmax
+        padding: 20px 20px
+
       +mobile
         max-height: 100vmax
         padding: 20px 20px

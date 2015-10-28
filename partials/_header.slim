@@ -1,9 +1,10 @@
 .header
   .menu(class="#{ container.homePage ? 'homepage' : ''}")
     img.logo src=@nuwe_logo
-    - for container in contentful.containers.order("order", "ASC")
-      a.link(href="/#{container.slug}.html")
-        = container.slug
+    - for box in contentful.containers.order("order", "ASC")
+      - unless box.homePage
+        a.link(href="/#{box.slug}.html")
+          = box.slug.capitalize
 
     a.send_mail(href="#")
       img.message_icon src=@message_icon
@@ -17,9 +18,10 @@
 
   .menu
     a(href="/") Nuwe
-    a(href="/digital.html") Integration
-    a(href="/cube.html") Development
-    a(href="/technology.html") Technology
+    - for box in contentful.containers.order("order", "ASC")
+      - unless box.homePage
+        a(href="/#{box.slug}.html")
+          = box.slug.capitalize
 
     .social
       a.gh(href="#")

@@ -3,7 +3,7 @@
     - if container.portfolioComponent.portfolioArticles?
       - index = 0
       - container.portfolioComponent.portfolioArticles.each do |item|
-        .portfolio_item(data-index="#{index}")
+        .portfolio_item(data-index="#{index}" class="col-#{item.columns}")
           .illustration
             img src=item.coverImage
           .label
@@ -14,12 +14,12 @@
             img src=@details_arrow
           .author
             .avatar
-              img src=path('sergio_avatar.png')
+              img src=item.author.profilePhoto
             .info
               .name
-                | Sergio Mottola,
+                = item.author.name
               .author_title
-                | Title of person on project
+                = item.author.jobTitle
 
           .title =item.title
 

@@ -11,13 +11,20 @@
 
 
     .members
-      - 4.times do
+      -for member in container.teamComponent.teamMember
 
         .member
           .avatar
-            img src=@message_avatar
+            img src=member.profilePhoto
 
-          .name Sergio Mottola
+          .name =member.name
 
           .contact
-            a(href="#") @sergiotwitter
+            - if member.website?
+              - str = member.website
+              - if str.include? "twitter"
+                - link_text = "@#{str.split('/').last}"
+              - else
+                - link_text = str.split('/').last
+                - link_text['www.'] = ''
+              a(href="#{member.website}") =link_text

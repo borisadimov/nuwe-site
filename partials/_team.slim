@@ -1,6 +1,15 @@
 .team
   .container
-    .title Core team / directors
+
+    .title = container.teamComponent.name
+
+    .values
+      - for value in container.teamComponent.values
+        .value
+          .value_name = value.name
+          .value_description = value.description
+
+
     .members
       - 4.times do
 

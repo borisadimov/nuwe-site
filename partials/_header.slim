@@ -1,9 +1,10 @@
 .header
   .menu(class="#{ container.homePage ? 'homepage' : ''}")
     img.logo src=@nuwe_logo
-    a.link(href="/digital.html") Integration
-    a.link(href="/cube.html") Development
-    a.link(href="/technology.html") Technology
+    - for container in contentful.containers.order("order", "ASC")
+      a.link(href="/#{container.slug}.html")
+        = container.slug
+
     a.send_mail(href="#")
       img.message_icon src=@message_icon
     .slug = container.slug

@@ -794,6 +794,27 @@ section {
       font: 600 5rem/6.0625rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
       -webkit-font-smoothing: antialiased;
       letter-spacing: 0.02em; }
+    .hero .text[class*="left"] {
+      text-align: left;
+      width: 50%; }
+    .hero .text[class*="centre"] {
+      width: 100%; }
+    .hero .text[class*="right"] {
+      width: 50%;
+      left: initial;
+      right: 0; }
+    .hero .text[class$="small"] .slogan {
+      font: 600 2.25rem/2.8125rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em; }
+    .hero .text[class$="medium"] .slogan {
+      font: 600 3.75rem/4.625rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em; }
+    .hero .text[class$="large"] .slogan {
+      font: 600 5rem/6.0625rem "Helvetica Neue", Helvetica Neue, Helvetica, Arial;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.02em; }
 
 .message {
   padding: 80px 0 70px 0;
@@ -932,9 +953,9 @@ section {
     padding: 0 25px; }
   .portfolio .portfolio_item {
     cursor: pointer;
-    -webkit-flex: 0 1 31%;
-        -ms-flex: 0 1 31%;
-            flex: 0 1 31%;
+    -webkit-flex: 0 1 calc(32% - 6px);
+        -ms-flex: 0 1 calc(32% - 6px);
+            flex: 0 1 calc(32% - 6px);
     height: 388px;
     margin: 8px;
     transition: all 0.3s ease;
@@ -971,9 +992,9 @@ section {
         -webkit-transform: scale(0.1);
                 transform: scale(0.1); }
     .portfolio .portfolio_item.col-2 {
-      -webkit-flex: 0 1 calc(62% + 16px);
-          -ms-flex: 0 1 calc(62% + 16px);
-              flex: 0 1 calc(62% + 16px); }
+      -webkit-flex: 0 1 calc(64.2% + 2px);
+          -ms-flex: 0 1 calc(64.2% + 2px);
+              flex: 0 1 calc(64.2% + 2px); }
       @media screen and (min-width: 631px) and (max-width: 800px) {
         .portfolio .portfolio_item.col-2 {
           -webkit-flex: 0 0 100%;
@@ -985,9 +1006,9 @@ section {
               -ms-flex: 0 0 100%;
                   flex: 0 0 100%; } }
     .portfolio .portfolio_item.col-3 {
-      -webkit-flex: 0 1 calc(93% + 32px);
-          -ms-flex: 0 1 calc(93% + 32px);
-              flex: 0 1 calc(93% + 32px); }
+      -webkit-flex: 0 1 calc(94% + 38px);
+          -ms-flex: 0 1 calc(94% + 38px);
+              flex: 0 1 calc(94% + 38px); }
       @media screen and (min-width: 631px) and (max-width: 800px) {
         .portfolio .portfolio_item.col-3 {
           -webkit-flex: 0 0 100%;
@@ -1004,7 +1025,7 @@ section {
     margin-bottom: 20px;
     z-index: 2;
     background: #3fa9f5;
-    right: 30px;
+    right: 52px;
     left: 33.5px;
     color: #FFFFFF;
     padding: 40px 50px; }

@@ -24,7 +24,7 @@ $container_padding: 30px
 
   .portfolio_item
     cursor: pointer
-    flex: 0 1 31%
+    flex: 0 1 calc(32% - 6px)
     height: $portfolio_item_height
     margin: 8px
     transition: all 0.3s ease
@@ -58,7 +58,7 @@ $container_padding: 30px
 
 
     &.col-2
-      flex: 0 1 calc(62% + 16px)
+      flex: 0 1 calc(64.2% + 2px)
 
       +tablet
         flex: 0 0 100%
@@ -67,7 +67,7 @@ $container_padding: 30px
         flex: 0 0 100%
 
     &.col-3
-      flex: 0 1 calc(93% + 32px)
+      flex: 0 1 calc(94% + 38px)
 
       +tablet
         flex: 0 0 100%
@@ -85,7 +85,7 @@ $container_padding: 30px
     // top:  $portfolio_item_height + 24
 
     background: $blue
-    right: $container_padding
+    right: $container_padding+22
     left: $container_padding+3.5
     color: #FFFFFF
     padding: 40px 50px

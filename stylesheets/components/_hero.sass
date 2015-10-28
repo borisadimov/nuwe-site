@@ -15,3 +15,25 @@
     transform: translateY(-50%)
     .slogan
       +medium(80,97)
+
+
+    &[class*="left"]
+      text-align: left
+      width: 50%
+    &[class*="centre"]
+      width: 100%
+    &[class*="right"]
+      width: 50%
+      left: initial
+      right: 0
+
+
+    &[class$="small"]
+      .slogan
+        +medium(36,45)
+    &[class$="medium"]
+      .slogan
+        +medium(60,74)
+    &[class$="large"]
+      .slogan
+        +medium(80,97)

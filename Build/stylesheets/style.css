@@ -959,7 +959,8 @@ section {
     height: 388px;
     margin: 8px;
     transition: all 0.3s ease;
-    border: 1px solid #f1f1f1; }
+    border: 1px solid #f1f1f1;
+    background: #F5F5F5; }
     @media screen and (min-width: 631px) and (max-width: 800px) {
       .portfolio .portfolio_item {
         -webkit-flex: 0 0 100%;

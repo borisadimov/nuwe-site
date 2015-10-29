@@ -26,6 +26,7 @@
           .text =item.body
 
           .links
-            / a(href="#") = item.cta
+            a(href="#{item.cta[1]}") 
+              = item.cta[0]
 
         - index += 1

@@ -1,21 +1,27 @@
 $header-height: 50px
 
 .header
+  .container
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: center
+  .logo
+    max-width: 82px
+
   .menu
-    @extend .container
     height: $header-height
     display: flex
     flex-direction: row
     flex-wrap: nowrap
-    justify-content: space-between
+    justify-content: flex-end
     align-items: center
-    +light(18, 22)
+    +medium(14, 17)
 
     .slug
       display: none
 
-    .logo
-      max-width: 82px
+
 
     .message_icon
       width: 28px
@@ -27,40 +33,40 @@ $header-height: 50px
       border-bottom: 1.5px solid $blue
       cursor: pointer
 
-    &.homepage
+  &.homepage
+    .toggle_menu
+      display: none
+
+    +tablet
+      .link, .send_mail
+        display: none
       .toggle_menu
-        display: none
-
-      +tablet
-        .link, .send_mail
-          display: none
-        .toggle_menu
-          display: block
-
-      +mobile
-        .link, .send_mail
-          display: none
-        .toggle_menu
-          display: block
-
-
-    &:not(.homepage)
-      flex-direction: row-reverse
-      +tablet
-        flex-direction: row
-        .send_mail
-          display: none
-      +mobile
-        flex-direction: row
-        .send_mail
-          display: none
-      .slug
         display: block
-        text-transform: capitalize
-        +light(18, 22)
-        color: $blue
-      .link, .logo
+
+    +mobile
+      .link, .send_mail
         display: none
+      .toggle_menu
+        display: block
+
+
+  &:not(.homepage)
+    flex-direction: row-reverse
+    +tablet
+      flex-direction: row
+      .send_mail
+        display: none
+    +mobile
+      flex-direction: row
+      .send_mail
+        display: none
+    .slug
+      display: block
+      text-transform: capitalize
+      +light(18, 22)
+      color: $blue
+    .link, .logo
+      display: none
 
 
 

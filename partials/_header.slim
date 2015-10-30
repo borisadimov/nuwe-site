@@ -1,15 +1,16 @@
-.header
-  .menu(class="#{ container.homePage ? 'homepage' : ''}")
+.header(class="#{ container.homePage ? 'homepage' : ''}")
+  .container
     img.logo src=@nuwe_logo
-    - for box in contentful.containers.order("order", "ASC")
-      - unless box.homePage
-        a.link(href="/#{box.slug}.html")
-          = box.slug.capitalize
+    .menu
+      - for box in contentful.containers.order("order", "ASC")
+        - unless box.homePage
+          a.link(href="/#{box.slug}.html")
+            = box.slug.capitalize
 
-    a.send_mail(href="#")
-      img.message_icon src=@message_icon
-    .slug = container.slug
-    .toggle_menu
+      a.send_mail(href="#")
+        img.message_icon src=@message_icon
+      .slug = container.slug
+      .toggle_menu
 
 
 

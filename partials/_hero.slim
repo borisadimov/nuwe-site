@@ -5,4 +5,5 @@
     .text(class="#{container.bannerComponent.bannerStyle}")
       .slogan =container.bannerComponent.mainTitle
       - if container.bannerComponent.subtitle?
-        .subslogan =container.bannerComponent.subtitle
+        .subslogan container.bannerComponent.subtitle
+      / .subslogan Subslogan container.bannerComponent.subtitle

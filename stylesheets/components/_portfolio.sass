@@ -21,15 +21,13 @@ $container_padding: 30px
     padding: 0 25px
 
 
-
-  .portfolio_item
-    cursor: pointer
+  .item_container
     flex: 0 1 calc(32% - 6px)
+
     height: $portfolio_item_height
     margin: 8px
-    transition: all 0.3s ease
-    border: 1px solid #f1f1f1
-    background: #F5F5F5
+    transition: height .5s ease
+    overflow-y: hidden
     +tablet
       flex: 0 0 100%
       margin: 12px 0
@@ -37,25 +35,6 @@ $container_padding: 30px
       flex: 0 0 100%
       margin: 12px 0
 
-
-    .illustration
-      height: 310px
-      line-height: 310px
-      vertical-align: middle
-      img
-        max-height: 310px
-
-    .label
-      +thin(30,30)
-      color: #999999
-      margin-top: 10px
-
-    &:hover
-      background: #fff
-      transform: scale(1.01)
-
-      .details
-        transform: scale(0.1)
 
 
     &.col-2
@@ -77,129 +56,161 @@ $container_padding: 30px
         flex: 0 0 100%
 
 
-  .details
-    position: absolute
-    display: none
-    margin-bottom: 20px
-    z-index: 2
-    // width: $portfolio_item_width * 3 + 32
-    // top:  $portfolio_item_height + 24
-
-    background: $blue
-    right: $container_padding+22
-    left: $container_padding+3.5
-    color: #FFFFFF
-    padding: 40px 50px
-
-    +tablet
-      top: initial !important
-      right: initial !important
-      left: initial !important
-      display: block
-      position: relative
-      max-height: 0
-      flex: 0 0 100%
-      padding: 0 20px
-      transition: all .7s ease
-      overflow: hidden
-    +mobile
-      top: initial !important
-      right: initial !important
-      left: initial !important
-      display: block
-      position: relative
-      max-height: 0
-      flex: 0 0 100%
-      padding: 0 20px
-      transition: all .7s ease
-      overflow: hidden
-
-    &.show
-      display: block
-
-      +tablet
-        max-height: 100vmax
-        padding: 20px 20px
-
-      +mobile
-        max-height: 100vmax
-        padding: 20px 20px
-
-    .close
-      width: 34px
-      height: 34px
-      background: url(/images/close_icon.png) center center no-repeat
-      background-size: cover
+    .portfolio_item
       cursor: pointer
-      position: absolute
-      right: 30px
-      top: 30px
+      transition: all 0.3s ease
+      border: 1px solid #f1f1f1
+      background: #F5F5F5
+      height: $portfolio_item_height
 
-    .arrow
-      width: 117px
-      height: 62px
-      position: absolute
-      top: -55px
-      left: 80%
-      z-index: 3
-      +tablet
-        display: none
-      +mobile
-        display: none
-      img
-        max-width: 117px
-        width: 117px
-        height: 57px
 
-    .author
-      display: flex
-      flex-flow: row nowrap
-      align-items: center
-      .avatar
-        img
-          width: 64px
+      &:hover
+        background: #fff
+        transform: scale(1.05)
 
-      .info
-        text-align: left
-        margin-left: 30px
-        .name
-          +medium(18,24)
-          color: #FFFFFF
-        .author_title
-          +thin(18,24)
-          color: #FFFFFF
-
-    .title
-      text-align: left
-      margin: 50px 0 40px 0
-      +thin(30,35)
-      color: #FFFFFF
-
-    .text
-      text-align: left
-      white-space: pre-line
-      +thin(18,25)
-
-    .links
-      margin-top: 30px
-      text-align: left
-      display: flex
-      justify-content: space-between
-
-      a
+      .illustration
+        height: 310px
+        line-height: 310px
         vertical-align: middle
-        +thin(24,45)
-        color: #fff
-        &:after
-          margin-left: 0.5rem
-          content: ""
-          display: inline-block
-          vertical-align: middle
-          width: 30px
-          height: 30px
-          background: url(/images/arrow_icon.png) center center no-repeat
-          background-size: cover
+        img
+          max-height: 310px
 
+      .label
+        +thin(30,30)
+        color: #999999
+        margin-top: 10px
+
+
+
+    .details
+      display: none
+      position: absolute
+      margin-top: 20px
+      z-index: 2
+      // width: $portfolio_item_width * 3 + 32
+      top:  auto
+
+
+      background: $blue
+      right: $container_padding+22
+      left: $container_padding+3.5
+      color: #FFFFFF
+      padding: 40px 50px
+
+      +tablet
+        top: initial !important
+        right: initial !important
+        left: initial !important
+        display: block
+        position: relative
+        max-height: 0
+        flex: 0 0 100%
+        padding: 0 20px
+        transition: all .7s ease
+        overflow: hidden
+      +mobile
+        top: initial !important
+        right: initial !important
+        left: initial !important
+        display: block
+        position: relative
+        max-height: 0
+        flex: 0 0 100%
+        padding: 0 20px
+        transition: all .7s ease
+        overflow: hidden
+
+      &.show
+        display: block
+
+        +tablet
+          max-height: 100vmax
+          padding: 20px 20px
+
+        +mobile
+          max-height: 100vmax
+          padding: 20px 20px
+
+      .close
+        width: 34px
+        height: 34px
+        background: url(/images/close_icon.png) center center no-repeat
+        background-size: cover
+        cursor: pointer
+        position: absolute
+        right: 30px
+        top: 30px
+
+      .arrow
+        width: 117px
+        height: 62px
+        position: absolute
+        top: -55px
+        left: 80%
+        z-index: 3
+        +tablet
+          display: none
+        +mobile
+          display: none
+        img
+          max-width: 117px
+          width: 117px
+          height: 57px
+
+      .author
+        display: flex
+        flex-flow: row nowrap
+        align-items: center
+        .avatar
+          img
+            width: 64px
+
+        .info
+          text-align: left
+          margin-left: 30px
+          .name
+            +medium(18,24)
+            color: #FFFFFF
+          .author_title
+            +thin(18,24)
+            color: #FFFFFF
+
+      .title
+        text-align: left
+        margin: 50px 0 40px 0
+        +thin(30,35)
+        color: #FFFFFF
+
+      .text
+        text-align: left
+        white-space: pre-line
+        +thin(18,25)
+
+      .links
+        margin-top: 30px
+        text-align: left
+        display: flex
+        justify-content: space-between
+
+        a
+          vertical-align: middle
+          +thin(24,45)
+          color: #fff
+          &:after
+            margin-left: 0.5rem
+            content: ""
+            display: inline-block
+            vertical-align: middle
+            width: 30px
+            height: 30px
+            background: url(/images/arrow_icon.png) center center no-repeat
+            background-size: cover
+
+
+    &:not(.show)
+      height: $portfolio_item_height !important
+    &.show
+      height: auto
 
 
 

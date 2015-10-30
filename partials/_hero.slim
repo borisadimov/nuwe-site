@@ -1,4 +1,8 @@
-.hero(style="background-image: url('#{container.bannerComponent.bannerImage}')")
+.hero
+  .bg(style="background-image: url(#{container.bannerComponent.bannerImage})")
+  .bg_mobile(style="background-image: url(#{container.bannerComponent.mobileImage})")
   .container
     .text(class="#{container.bannerComponent.bannerStyle}")
       .slogan =container.bannerComponent.mainTitle
+      - if container.bannerComponent.subtitle?
+        .subslogan =container.bannerComponent.subtitle

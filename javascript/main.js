@@ -86,25 +86,54 @@ ready(function(){
   scr.src = 'http://blog.nuwe.co/articles?format=json&callback=posts'
   document.body.appendChild(scr)
 
+  var timeout = null
+  var inprogress = false
 
+  function showDetalails(item){
+    var index = $(item).data('index');
+    var offset = $(item).position().left;
+    var width = $(item).innerWidth();
+    $(item).parent().find('.arrow').css('left', offset+(width / 2)-60+'px');
+    var height = $(item).height()+$(item).next().height();
+    $(item).parent().css({height: 100+height+'px'}).addClass('show');
+    $(item).parent().find('.details').slideDown(function(){
+      inprogress = false
+    });
 
+    $('html, body').animate({
+      scrollTop: $(item).offset().top+400
+    }, 700);
+
+  }
+
+  var handleProtfolioItemClick = function(item){
+    inprogress = true
+    if ($('.portfolio .item_container.show').length > 0) {
+      $('.portfolio .item_container').removeClass('show').find('.details').slideUp()
+      clearTimeout(timeout);
+      timeout = setTimeout(function(){showDetalails(item)}, 500)
+    } else {
+      showDetalails(item)
+    }
+  }
 
   $('.portfolio_item').click(function(e){
-    var index = $(this).data('index')
-    var offset = $(this).position().left
-    var width = $(this).width()
-    var top = $(this).position().top+$(this).height()+45
-    $('.portfolio .details').removeClass('show').each(function(i,e){
-      if (i === index){
-        $(e).addClass('show');
-        $(e).css('top',top+'px');
-        $(e).find('.arrow').css('left', offset+114+'px');
-      }
-    })
+    var that = this
+    if (inprogress){
+      clearTimeout(timeout)
+      timeout = setTimeout(function(){handleProtfolioItemClick(that)}, 500)
+    } else {
+      handleProtfolioItemClick(this)
+    }
+
   })
 
+
+
+
   $('.portfolio .details .close').click(function(){
-    $(this).parent().removeClass('show')
+    $(this).parent().slideUp()
+    $(this).parent().parent().removeClass('show')
   })
 
   $('.logo').click(function(e){

@@ -1,6 +1,34 @@
 .hero
   height: calc(100vh - #{$header-height})
-  background-size: cover
+
+  position: relative
+  .bg, .bg_mobile
+    position: absolute
+    z-index: 0
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0
+    background-size: cover
+
+  .bg
+    +tablet
+      display: none
+    +mobile
+      display: none
+  .bg_mobile
+    display: none
+    +tablet
+      display: block
+    +mobile
+      display: block
+
+
+
+  +tablet
+    background-position: 100% 100%, 0 0
+  +mobile
+    background-position: 100% 100%, 0 0
   position: relative
   overflow: hidden
   .text

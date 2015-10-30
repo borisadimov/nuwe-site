@@ -1,32 +1,30 @@
 .portfolio
   .container
     - if container.portfolioComponent.portfolioArticles?
-      - index = 0
       - container.portfolioComponent.portfolioArticles.each do |item|
-        .portfolio_item(data-index="#{index}" class="col-#{item.columns}")
-          .illustration
-            img src=item.coverImage
-          .label
-            = item.title
-        .details(data-index="#{index}")
-          .close
-          .arrow
-            img src=@details_arrow
-          .author
-            .avatar
-              img src=item.author.profilePhoto
-            .info
-              .name
-                = item.author.name
-              .author_title
-                = item.author.jobTitle
+        .item_container(class="col-#{item.columns}")
+          .portfolio_item
+            .illustration
+              img src=item.coverImage
+            .label
+              = item.title
+          .details
+            .close
+            .arrow
+              img src=@details_arrow
+            .author
+              .avatar
+                img src=item.author.profilePhoto
+              .info
+                .name
+                  = item.author.name
+                .author_title
+                  = item.author.jobTitle
 
-          .title =item.title
+            .title =item.title
 
-          .text =item.body
+            .text =item.body
 
-          .links
-            a(href="#{item.cta[1]}") 
-              = item.cta[0]
-
-        - index += 1
+            .links
+              a(href="#{item.cta[1]}")
+                = item.cta[0]
